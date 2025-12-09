@@ -4,12 +4,24 @@ import Home from './pages/Home/Home'
 import Cart from './pages/Cart/Cart'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Footer from './components/Footer/Footer'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import LoginPopup from './LoginPopup/LoginPopup'
 
 const App = () => {
 
   const [showLogin, setShowLogin] = useState(false)
+
+  useEffect(() => {
+    if (showLogin) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [showLogin])
 
   return (
     <>
