@@ -61,7 +61,11 @@
 @media (max-width:750px) {
 
   .header-contents {
-    max-width: 55%;
+    max-width: 65%;
+  }
+
+  .header {
+    height: 40vw;
   }
 
   .header-contents p {
